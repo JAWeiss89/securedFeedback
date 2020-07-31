@@ -1,6 +1,7 @@
 <html>
 
   <head>
+    <title>{% block title %}Title goes here{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/app.css">
   </head>
@@ -11,11 +12,13 @@
       {% for msg in get_flashed_messages() %}
         <div class="alert alert-danger">{{ msg }}</div>
       {% endfor %}  
+
+      {% block content %}
         <!-- Content from other pages goes here! -->
 
 
 
-      {% block content %}
+
       {% endblock %}
     </div>
   
